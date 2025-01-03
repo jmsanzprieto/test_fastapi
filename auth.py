@@ -24,7 +24,10 @@ async def logout(credentials: HTTPAuthorizationCredentials = Depends(security)):
     token = credentials.credentials
     payload = verify_jwt_token(token)  # Verifica que el token sea válido
     revoked_tokens.add(token)  # Añade el token a la lista de revocados
-    save_revoked_tokens(revoked_tokens)  # Guarda la lista en el archivo
+    
+    # Guarda únicamente el token actual en la base de datos
+    save_revoked_tokens(token)
+    
     return {"message": f"User {payload['sub']} has been logged out successfully."}
 
 # Endpoint de login

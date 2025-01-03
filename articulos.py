@@ -4,14 +4,11 @@ import json
 import os
 from typing import List
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from funciones import load_data_articulos,  save_data_articulos,  verify_jwt_token
+from funciones import load_data_articulos, save_data_articulos, verify_jwt_token, delete_data_articulo
 from dotenv import load_dotenv
 
 # Cargar la ruta del archivo JSON desde el archivo .env
 load_dotenv()
-
-# Ruta del archivo JSON
-DATOS_ARTICULOS_PATH = os.getenv("DATOS_ARTICULOS")
 
 # Middleware de seguridad
 security = HTTPBearer()
@@ -71,12 +68,18 @@ async def update_articulo(articulo_id: int, articulo: Articulo):
     raise HTTPException(status_code=404, detail="Articulo no encontrado")
 
 # Ruta para eliminar un artículo
-@router.delete("/articulo/{articulo_id}", response_model=Articulo, dependencies=[Depends(validate_token)])
+@router.delete("/articulo/{articulo_id}", dependencies=[Depends(validate_token)])
 async def delete_articulo(articulo_id: int):
-    data = load_data_articulos()
-    for idx, art in enumerate(data):
-        if art["id"] == articulo_id:
-            deleted_articulo = data.pop(idx)
-            save_data_articulos(data)
-            return deleted_articulo
-    raise HTTPException(status_code=404, detail="Articulo no encontrado")
+    try:
+        # Llamamos a la función para eliminar el artículo de la base de datos
+        delete_data_articulo(articulo_id)
+
+        # Devolvemos solo un mensaje indicando que el artículo fue eliminado
+        return {"message": "Articulo eliminado correctamente"}
+
+    except HTTPException as e:
+        # Si ocurre un error, lo levantamos de nuevo para que sea manejado
+        raise e
+    except Exception as e:
+        # Capturamos cualquier otro error inesperado
+        raise HTTPException(status_code=500, detail=f"Error al eliminar el artículo: {e}")

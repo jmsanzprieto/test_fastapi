@@ -2,13 +2,14 @@ from pydantic import BaseModel
 import json
 import os
 import jwt
-import datetime
+# import datetime
+from datetime import datetime,timedelta
 from fastapi import FastAPI, HTTPException, Depends, Header
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from dotenv import load_dotenv
 from auth import router as auth_router  # Importar las rutas desde auth.py
 from articulos import router as articulos_router  # Importar las rutas desde articulos.py
-
+from usuarios import router as usuarios_router  # Importar las rutas desde usuarios.py
 # Cargar las variables de entorno
 load_dotenv()
 
@@ -18,6 +19,7 @@ app = FastAPI()
 # Incluir las rutas del archivo auth.py
 app.include_router(auth_router)
 app.include_router(articulos_router)
+app.include_router(usuarios_router)
 
 @app.get("/")
 async def read_root():
