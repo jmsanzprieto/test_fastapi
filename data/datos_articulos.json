@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "titulo": "Introducción a FastAPI",
+        "fecha": "2023-01-01",
+        "autor": "user1",
+        "contenido": "FastAPI es un framework moderno y rápido para construir APIs con Python."
+    },
+    {
+        "id": 2,
+        "titulo": "Ventajas de usar FastAPI",
+        "fecha": "2023-01-05",
+        "autor": "user2",
+        "contenido": "FastAPI ofrece muchas ventajas como la validación automática de datos y la generación de documentación."
+    },
+    {
+        "id": 3,
+        "titulo": "Cómo empezar con FastAPI",
+        "fecha": "2023-01-10",
+        "autor": "user3",
+        "contenido": "Para empezar con FastAPI, necesitas instalarlo usando pip y crear tu primer endpoint."
+    },
+    {
+        "id": 4,
+        "titulo": "Autenticación en FastAPI",
+        "fecha": "2023-01-15",
+        "autor": "user1",
+        "contenido": "FastAPI soporta varios métodos de autenticación como OAuth2 y JWT."
+    },
+    {
+        "id": 5,
+        "titulo": "Deploy de aplicaciones FastAPI",
+        "fecha": "2023-01-20",
+        "autor": "user2",
+        "contenido": "Puedes desplegar aplicaciones FastAPI en varios servicios de cloud como AWS, GCP y Azure."
+    },
+    {
+        "id": 6,
+        "titulo": "Integración con bases de datos",
+        "fecha": "2023-01-25",
+        "autor": "user3",
+        "contenido": "FastAPI se integra fácilmente con bases de datos como PostgreSQL, MySQL y MongoDB."
+    },
+    {
+        "id": 7,
+        "titulo": "Testing en FastAPI",
+        "fecha": "2023-01-30",
+        "autor": "user1",
+        "contenido": "FastAPI facilita la creación de tests para tus endpoints usando pytest."
+    },
+    {
+        "id": 8,
+        "titulo": "Middleware en FastAPI",
+        "fecha": "2023-02-01",
+        "autor": "user2",
+        "contenido": "Puedes usar middleware en FastAPI para añadir funcionalidades como logging y manejo de errores."
+    },
+    {
+        "id": 9,
+        "titulo": "WebSockets en FastAPI",
+        "fecha": "2023-02-05",
+        "autor": "user3",
+        "contenido": "FastAPI soporta WebSockets para aplicaciones en tiempo real."
+    },
+    {
+        "id": 10,
+        "titulo": "Documentación automática",
+        "fecha": "2023-02-10",
+        "autor": "user1",
+        "contenido": "FastAPI genera automáticamente documentación interactiva para tus APIs usando Swagger y ReDoc."
+    },
+    {
+        "id": 20,
+        "titulo": "Una prueba",
+        "fecha": "2025-01-02",
+        "autor": "jmsanz2",
+        "contenido": "Un contenido a ver si se carga el nuevo elemento en la bd"
+    }
+]
