@@ -26,6 +26,15 @@ Este documento proporciona instrucciones para descargar, instalar y lanzar el pr
     pip install -r requirements.txt
     ```
 
+4. Configura un fichero .env con parametros de conexion
+      ```
+        DB_SERVER = "localhost"
+        DATABASE = ""
+        USER = ""
+        PASSWORD = "" 
+    ```
+   
+
 ## Ejecución
 
 1. Inicia la aplicación FastAPI:
